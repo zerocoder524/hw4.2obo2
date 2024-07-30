@@ -1,4 +1,5 @@
 class User:
+
     def __init__(self, id, name, access_level='user'):
         self._id = id  # Инкапсуляция
         self._name = name
@@ -14,8 +15,9 @@ class User:
         return self._access_level
 
 class Admin(User):
+
     def __init__(self, id, name, access_level='admin'):
-        super().__init__(id, name, access_level)
+       super().__init__(id, name, access_level)
         self._users = []  # Список пользователей, управляемых администратором
 
     def add_user(self, user):
@@ -27,7 +29,6 @@ class Admin(User):
                 del self._users[i]
                 return True
         return False
-
 
 user1 = User(1, "Иван Иванов")
 user2 = User(2, "Мария Петрова")
